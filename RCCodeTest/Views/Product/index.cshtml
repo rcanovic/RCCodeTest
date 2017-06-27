@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Products</h2>
+
+<form id="formAddNewRow" action="#" title="Add New Product" style="width: 320px;">
+    <input type="hidden" name="ProductID" id="ProductID" rel="-1" />
+    <label for="name"><br />Name</label><input type="text" name="Name" id="Name" class="required" rel="0" />
+    <br />
+    <label for="name">Product Number</label><input type="text" name="ProductNumber" id="ProductNumber" class="required" rel="1" />
+    <br />
+    <label for="name">Color</label><input type="text" name="Color" id="Color" rel="2" />
+    <br />
+    <label for="name">Safety Stock Level</label><input type="text" name="SafetyStockLevel" id="SafetyStockLevel" rel="3" />
+    <br />
+    <label for="name">Reorder Point</label><input type="text" name="ReorderPoint" id="ReorderPoint" rel="4" />
+    <br />
+    <label for="name">Standard Cost</label><input type="text" name="StandardCost" id="StandardCost" rel="5" />
+    <br />
+    <label for="name">List Price</label><input type="text" name="ListPrice" id="ListPrice" rel="6" />
+    <br />
+</form>
+
+<div>
+    <table id="ProductResultsTbl" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Product Number</th>
+                <th>Color</th>
+                <th>Safety Stock Level</th>
+                <th>Reorder Point</th>
+                <th>Standard Cost</th>
+                <th>List Price</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <!-- <div class="add_delete_toolbar" /> -->
+    <button id="btnAddNewProduct">Add Product</button> 
+</div>
+
+
+
