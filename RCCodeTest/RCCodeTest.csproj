@@ -144,7 +144,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Dal\Product.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,12 +208,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\plugins\jQueryUI\jquery-ui-1.10.3.js" />
-    <Content Include="Scripts\plugins\jQueryUI\jquery-ui-1.10.3.min.js" />
-    <Content Include="Scripts\plugins\jsZip\jszip.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\plugins\pdfmake\pdfmake.js" />
-    <Content Include="Scripts\plugins\pdfmake\vfs_fonts.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config" />

@@ -12,12 +12,16 @@ namespace RCCodeTest.Controllers
 {
     public class ProductController : Controller
     {
-        // GET: Product
         public ActionResult Index()
         {
             return View();
         }
 
+        /// <summary>
+        /// ProductDataAjaxHandler
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
         public ActionResult ProductDataAjaxHandler(jQueryDataTableParamModel param)
         {
             System.Collections.Generic.IEnumerable<Models.Product> results = null;
@@ -78,6 +82,16 @@ namespace RCCodeTest.Controllers
             JsonRequestBehavior.AllowGet);
         }
 
+        /// <summary>
+        /// UpdateData
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="value"></param>
+        /// <param name="rowId"></param>
+        /// <param name="columnPosition"></param>
+        /// <param name="columnId"></param>
+        /// <param name="columnName"></param>
+        /// <returns></returns>
         [HttpPost]
         public string UpdateData(int id, string value, int? rowId, int? columnPosition, int? columnId, string columnName)
         {
@@ -95,26 +109,34 @@ namespace RCCodeTest.Controllers
             }
         }
 
+        /// <summary>
+        /// AddData
+        /// </summary>
+        /// <param name="ProductId"></param>
+        /// <param name="Name"></param>
+        /// <param name="ProductNumber"></param>
+        /// <param name="Color"></param>
+        /// <param name="SafetyStockLevel"></param>
+        /// <param name="ReorderPoint"></param>
+        /// <param name="StandardCost"></param>
+        /// <param name="ListPrice"></param>
+        /// <returns></returns>
         [HttpPost]
-        public int AddData(string ProductId, string Name, string ProductNumber, string SafetyStockLevel, string ReorderPoint, string StandardCost, string ListPrice)
-        {   /*
-            var companies = DataRepository.GetCompanies();
-            if (companies.Any(c => c.Name.ToLower().Equals(name.ToLower())))
+        public int AddData(string ProductId, string Name, string ProductNumber, string Color, string SafetyStockLevel, string ReorderPoint, string StandardCost, string ListPrice)
+        {
+            try
             {
-                Response.Write("Company with the name '" + name + "' already exists");
-                Response.StatusCode = 404;
-                Response.End();
-                return -1;
+                ProductDAL ProdDal = new ProductDAL();
+                ProdDal.AddProduct(Name, Color, ProductNumber, SafetyStockLevel, ReorderPoint, StandardCost, ListPrice);
+                Session["ProductResultSet"] = null;
+
+                return 0;
+            }
+            catch
+            {
+                throw;
             }
 
-            var company = new Company();
-            company.Name = name;
-            company.Address = address;
-            company.Town = town;
-            companies.Add(company);
-            return company.ID;
-            */
-            return 0;
         }
     }
 }
